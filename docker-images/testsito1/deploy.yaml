@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testsito1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: testsito1
+  template:
+    metadata:
+      labels:
+        app: testsito1
+    spec:
+      containers:
+      - name: testsito1
+        image: domnethops/testsito1:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
